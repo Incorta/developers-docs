@@ -1,51 +1,54 @@
 import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
+import { IoDesktopOutline, IoLogoGithub, IoRocketOutline } from 'react-icons/all';
 
 type FeatureItem = {
   title: string;
-  image: string;
+  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    image: require('@site/src/static/img/undraw_docusaurus_mountain.svg'),
+    title: 'Getting Started',
+    Svg: IoRocketOutline,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+          With the Component SDK, you can extend the Incorta visual framework with new custom components,
+          including new visual elements, controls, and data visualizations.
+          <br/>
+          <a href="/docs/intro">Learn more</a>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    image: require('@site/src/static/img/undraw_docusaurus_tree.svg'),
+    title: 'Tutorials',
+    Svg: IoDesktopOutline,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Coming Soon...
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    image: require('@site/src/static/img/undraw_docusaurus_react.svg'),
+    title: 'Code Samples',
+    Svg: IoLogoGithub,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+          Try it yourself and play with our code samples.
+          <br />
+          <a href="https://github.com/Incorta/visualizations/">Learn more</a>
       </>
     ),
   },
 ];
 
-function Feature({title, image, description}: FeatureItem) {
+function Feature({title, Svg, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <img className={styles.featureSvg} alt={title} src={image} />
+        <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

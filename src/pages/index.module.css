@@ -8,9 +8,15 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url("/img/homepage-bg-gray-box.png");
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  --ifm-hero-background-color: #FFFFFF;
+  color: var(--ifm-color-primary-darkest);
 }
 
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
